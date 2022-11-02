@@ -1,0 +1,32 @@
+{
+  "name": "react-gatsby-scroll-animation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "react-gatsby-scroll-animation",
+  "author": "gerichilli",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby": "^4.24.6",
+    "gatsby-plugin-image": "^2.24.0",
+    "gatsby-plugin-mdx": "^4.3.0",
+    "gatsby-plugin-sass": "^5.24.0",
+    "gatsby-plugin-sharp": "^4.24.0",
+    "gatsby-plugin-sitemap": "^5.24.0",
+    "gatsby-source-filesystem": "^4.24.0",
+    "gatsby-transformer-sharp": "^4.24.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "sass": "^1.55.0"
+  }
+}
