@@ -1,54 +1,29 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# GSAP ScrollTrigger
 
-## 🚀 Quick start
+## Problems
 
-1.  **Create a Gatsby site.**
+- Chú ý khi muốn trigger animation ở các element sát góc màn hình (có thể event sẽ không được trigger nếu giá trị top/bottom của Trigger chưa chạm đến vị trí của element)
+- Thêm dependency: Khoảng 23kb
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Advance
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+- Hỗ trợ animation với css properties clip-path
+- Sử dụng với hoạt ảnh phức tạp (nhiều bước) mà không cần customize nhiều vì Gsap đã hỗ trợ.
 
-2.  **Start developing.**
+# Intersection Observer
 
-    Navigate into your new site’s directory and start it up.
+## Problems
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+- Phải customize nhiều với hoạt ảnh phức tạp
+- Không hỗ trợ tốt với animation sử dụng clip-path, có thể sẽ không hoạt động trong trường hợp:
 
-3.  **Open the code and start customizing!**
+```css
+clip-path: polygon(0 0, 0 0, 0 100%, 0 100%) => clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+```
 
-    Your site is now running at http://localhost:8000!
+## Advance
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+- Có thể viết 1 custom hook để tái sử dụng
+- Không phải thêm dependency
 
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+=> Với 1 trang web chỉ cần các animation đơn giản như thay đổi position / opacity => Dùng Intersection Observer. Với Object phức tạp hơn thì nên sử dụng ScrollTrigger.

@@ -1,6 +1,6 @@
-import * as React from "react";
+import React, { useRef } from "react";
 import "../styles/styles.scss";
-import Box from "../components/Box";
+import BoxGsap from "../components/BoxGsap";
 
 const IntersectionPage = () => {
   const [kanji, setKanji] = React.useState([]);
@@ -17,12 +17,12 @@ const IntersectionPage = () => {
 
   return (
     <main className="container">
-      <h1>IntersectionObserver を使用したスクロール アニメーション</h1>
+      <h1>Gsap を使用したスクロール アニメーション</h1>
       <div className="row">
         <div className="col">
           {kanji &&
             kanji.length > 0 &&
-            kanji.map((k, i) => <Box className="box" text={k} key={k} />)}
+            kanji.map((k, i) => <BoxGsap className="box" text={k} key={k} />)}
         </div>
       </div>
     </main>
